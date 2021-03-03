@@ -16,7 +16,8 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(`mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.r9b4e.mongodb.net/Budgets?retryWrites=true&w=majority`, {
+
+mongoose.connect(`mongodb+srv://${process.env.MONGO_NAME}:${process.env.PASSWORD}@cluster0.r9b4e.mongodb.net/Budgets?retryWrites=true&w=majority`, {
   useNewUrlParser: true,
   useFindAndModify: false,
   useUnifiedTopology: true
