@@ -21,7 +21,7 @@ This repository contains a progressive web application, that tracks transactions
 Downloading respository. In directory run npm install. This program requires a mongodb cluster. PLace the username and password of the cluster into a .env folder to connect. Then if desired use npm run seed to insert sample data into the database.
 
 ## Usage
-The application is deployed to https://salty-sea-99414.herokuapp.com/.com/.
+The application is deployed to https://salty-sea-99414.herokuapp.com.
 Server can be run in test usage with node server.js command.
 
 ## Credits
