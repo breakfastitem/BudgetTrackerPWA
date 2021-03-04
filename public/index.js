@@ -1,6 +1,8 @@
 let transactions = [];
 let myChart;
 
+let ID=1;
+
 fetch("/api/transaction")
   .then(response => {
     return response.json();
@@ -151,3 +153,19 @@ document.querySelector("#add-btn").onclick = function() {
 document.querySelector("#sub-btn").onclick = function() {
   sendTransaction(false);
 };
+
+function saveRecord(transaction) {
+  const request = indexedDB.open("transactions", 1);
+
+  request.onsuccess = () => {
+      const db = request.result;
+      const transactionDB = db.transaction(["transactions"], "readwrite");
+      const transactionStore = transactionDB.objectStore("transactions");
+      const body = transactionStore.index("transactionBody");
+    
+      transactionStore.add({ID: ID, body: transaction});
+    
+      ID ++;
+
+  }
+}
